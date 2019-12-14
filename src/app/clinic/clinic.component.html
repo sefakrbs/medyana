@@ -1,0 +1,20 @@
+
+<div *ngIf="method == 'create'">
+    <label style="font: bold;">Clinic Name: </label>
+    <input type="text" />
+    <button (click)="create()">{{method}}</button>
+</div>
+
+<div *ngIf="method == 'edit'">
+    <label style="font: bold;">Clinic Id: </label> <span>{{clinic.id}}</span> <br/>
+    <label style="font: bold;">Clinic Name: </label><input type="text" value="{{clinic.name}}" />
+    <button (click)="edit()">{{method}}</button>
+</div>
+  
+<div *ngIf="method == 'delete'">
+    <label style="font: bold;">Clinic Id: </label><span>{{clinic.id}}</span> <br/>
+    <label style="font: bold;">Clinic Name: </label><span>{{clinic.name}}</span>
+    <button (click)="delete()">{{method}}</button>
+</div>
+
+

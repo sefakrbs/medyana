@@ -1,1 +1,26 @@
-<p>clinc-list works!</p>
+<p>Clinics</p>
+
+<button (click)="createNew('/clinic')">
+    New Clinic
+</button>
+
+<div *ngFor="let item of list; index as id">
+   
+    <span>
+        {{item.id}}
+    </span>
+
+    <span>
+        {{item.name}}
+    </span>
+
+     <button (click)="edit('/clinic', id)">
+        Edit
+     </button>
+ 
+     <button (click)="delete('/clinic', id)">
+        Delete
+     </button>
+   
+   </div>
+ 

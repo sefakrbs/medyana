@@ -11,7 +11,8 @@ export class ClinicService {
   }
 
   getClinicList(){
-    return this.http.get('http://localhost:63600/');
+    // return this.clinics;
+    // return this.http.get('http://localhost:63600/Clinic/ClinicList');
   }
 
 }
