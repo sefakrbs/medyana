@@ -3,44 +3,52 @@
 <button (click)="createNew('/equipment')">
     New Equipment
 </button>
-
-<div *ngFor="let item of list; index as id">
-   
-    <span>
-        {{item.id}}
-    </span>
-
-    <span>
-        {{item.name}}
-    </span>
-
-    <span>
-        {{item.procureDate}}
-    </span>
-
-    <span>
-        {{item.quantity}}
-    </span>
-
-    <span>
-        {{item.price}}
-    </span>
-
-    <span>
-        {{item.usageRatio}}
-    </span>
-
-    <span>
-        {{item.clinicId}}
-    </span>
-
-     <button (click)="edit('/equipment', id)">
-        Edit
-     </button>
- 
-     <button (click)="delete('/equipment', id)">
-        Delete
-     </button>
-   
-   </div>
+<table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Procure Date</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Usage Ratio</th>
+        <th>Clinic Id</th>        
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of list; index as id">
+           <td>{{item.id}}</td>
+           <td>{{item.name}}</td>
+           <td>
+            {{item.procureDate}}
+            </td>
+    
+            <td>
+                {{item.quantity}}
+            </td>
+        
+            <td>
+                {{item.price}}
+            </td>
+        
+            <td>
+                {{item.usageRatio}}
+            </td>
+        
+            <td>
+                {{item.clinicId}}
+            </td>
+            <td>
+                <button (click)="edit('/equipment', id)">
+                    Edit
+                </button>
+            </td>
+            <td>
+                <button (click)="delete('/equipment', id)">
+                    Delete
+                </button>
+            </td>        
+            
+       </tr>
+    </tbody>
  

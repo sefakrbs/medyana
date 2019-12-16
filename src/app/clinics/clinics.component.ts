@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./clinics.component.css']
 })
 export class ClinicsComponent implements OnInit {
-
+  dtOptions: DataTables.Settings = {};
   list = clinicsList;
   constructor(
     private service: ClinicService,
@@ -17,6 +17,11 @@ export class ClinicsComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 2,
+      processing: true
+    };
     // this.clinics = this.service.getClinicList();
   }
 

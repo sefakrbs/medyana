@@ -9,12 +9,17 @@ import { Router } from '@angular/router';
 })
 export class EquipmentsComponent implements OnInit {
   list=equipmentList;
+  dtOptions: DataTables.Settings = {};
   constructor(private router: Router) {
     
    }
 
   ngOnInit() {
-    
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 2,
+      processing: true
+    };
   }
 
   edit(url, id, method){

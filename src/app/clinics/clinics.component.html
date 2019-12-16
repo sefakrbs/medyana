@@ -4,23 +4,28 @@
     New Clinic
 </button>
 
-<div *ngFor="let item of list; index as id">
-   
-    <span>
-        {{item.id}}
-    </span>
-
-    <span>
-        {{item.name}}
-    </span>
-
-     <button (click)="edit('/clinic', id)">
-        Edit
-     </button>
- 
-     <button (click)="delete('/clinic', id)">
-        Delete
-     </button>
-   
-   </div>
+<table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of list; index as id">
+           <td>{{item.id}}</td>
+           <td>{{item.name}}</td>
+           <td>
+               <button (click)="edit('/clinic', id)">
+                    Edit
+                </button></td>
+           <td>
+               <button (click)="delete('/clinic', id)">
+                    Delete
+                </button>
+            </td>            
+            
+       </tr>
+    </tbody>
+  
    <router-outlet id="clinics"></router-outlet>

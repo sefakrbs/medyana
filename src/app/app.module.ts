@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
