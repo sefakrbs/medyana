@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedyanaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clinic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Equipment" Relationship="Self.FK_Equipment_Clinic" FromRole="Clinic" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProcureDate" Type="DateTime" Precision="0" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UsageRatio" Type="Decimal" Precision="2" Scale="2" Nullable="false" />
+    <Property Name="ClinicId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Clinic" Relationship="Self.FK_Equipment_Clinic" FromRole="Equipment" ToRole="Clinic" />
+  </EntityType>
+  <Association Name="FK_Equipment_Clinic">
+    <End Role="Clinic" Type="Self.Clinic" Multiplicity="1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clinic">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="ClinicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedyanaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clinic" EntityType="Self.Clinic" />
+    <EntitySet Name="Equipment" EntityType="Self.Equipment" />
+    <AssociationSet Name="FK_Equipment_Clinic" Association="Self.FK_Equipment_Clinic">
+      <End Role="Clinic" EntitySet="Clinic" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

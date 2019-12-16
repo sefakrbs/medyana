@@ -1,0 +1,4 @@
+C:\Users\skarabas\documents\visual studio 2017\Projects\Medyana\Common.Utilities\bin\Debug\Common.Utilities.dll
+C:\Users\skarabas\documents\visual studio 2017\Projects\Medyana\Common.Utilities\bin\Debug\Common.Utilities.pdb
+C:\Users\skarabas\documents\visual studio 2017\Projects\Medyana\Common.Utilities\obj\Debug\Common.Utilities.dll
+C:\Users\skarabas\documents\visual studio 2017\Projects\Medyana\Common.Utilities\obj\Debug\Common.Utilities.pdb
