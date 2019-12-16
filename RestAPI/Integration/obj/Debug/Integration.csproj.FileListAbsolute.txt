@@ -1,0 +1,10 @@
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\bin\Debug\Integration.dll.config
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\bin\Debug\Integration.dll
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\bin\Debug\Integration.pdb
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\bin\Debug\EntityFramework.dll
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\bin\Debug\EntityFramework.xml
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\obj\Debug\Integration.csprojResolveAssemblyReference.cache
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\obj\Debug\Integration.dll
+c:\Users\skarabas\documents\visual studio 2017\Projects\RestAPI\Integration\obj\Debug\Integration.pdb

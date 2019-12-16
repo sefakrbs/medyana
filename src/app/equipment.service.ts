@@ -10,11 +10,11 @@ export class EquipmentService {
   constructor(private http: HttpClient) { }
   
   getEquipmentList(){
-    return ajax({url: 'http://localhost:63600/Equipment/EquipmentList', crossDomain:true});
+    return ajax({url: 'http://localhost:52814/Equipment/EquipmentList', crossDomain:true});
   }
 
   createEquipment(name: string){
-    const data = ajax({url: 'http://localhost:63600/Equipment/Create', crossDomain:true , body: { Name: name}});
+    const data = ajax({url: 'http://localhost:52814/Equipment/Create', crossDomain:true , body: { Name: name}});
      data.subscribe(res =>{
       if(!res.response || res.response == -1){
         return "operation is not successful";
@@ -25,7 +25,7 @@ export class EquipmentService {
   }
     
   updateEquipment(id, name: string){
-    const data = ajax({url: 'http://localhost:63600/Equipment/Update', crossDomain:true , body: {Id:id, Name: name}});
+    const data = ajax({url: 'http://localhost:52814/Equipment/Update', crossDomain:true , body: {Id:id, Name: name}});
     data.subscribe( res => {
       if(!res.response || res.response == -1){
         return "operation is not successful";
@@ -36,7 +36,7 @@ export class EquipmentService {
   }
 
     deleteEquipment(id){
-      const data = ajax({url: 'http://localhost:63600/Equipment/Delete', body: { id: id}, crossDomain:true });
+      const data = ajax({url: 'http://localhost:52814/Equipment/Delete', body: { id: id}, crossDomain:true });
       data.subscribe( res => {
         if(!res.response || res.response == -1){
           return "operation is not successful";

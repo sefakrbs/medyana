@@ -33,7 +33,7 @@ export class ClinicsComponent implements OnInit {
   }
 
   deneme (){
-    this.service.deleteClinic(6);
+    this.service.getClinicList();
   }
 
 }

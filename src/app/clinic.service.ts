@@ -13,11 +13,11 @@ export class ClinicService {
 
   getClinicList(){
     // return this.clinics;
-    return ajax({url: 'http://localhost:63600/Clinic/ClinicList', crossDomain:true});
+    return ajax({url: 'http://localhost:52814/Clinic/ClinicList', crossDomain:true});
   }
 
   createClinic(name: string){
-    const data = ajax({ url:'http://localhost:63600/Clinic/Create', method:'POST',  body: { Name: 'SASS'}, crossDomain:true });
+    const data = ajax({ url:'http://localhost:52814/Clinic/Create', method:'POST',  body: { Name: name}, crossDomain:true });
     data.subscribe( res => {
       if(!res.response || res.response == -1){
         return "operation is not successful";
@@ -28,7 +28,7 @@ export class ClinicService {
   }
     
   updateClinic(id, name: string){
-    const data = ajax({ url:'http://localhost:63600/Clinic/Update', method:'POST',  body: { Id: id, Name: name}, crossDomain:true });
+    const data = ajax({ url:'http://localhost:52814/Clinic/Update', method:'POST',  body: { Id: id, Name: name}, crossDomain:true });
     data.subscribe( res => {
       if(!res.response || res.response == -1){
         return "operation is not successful";
@@ -39,7 +39,7 @@ export class ClinicService {
   }
 
     deleteClinic(id){
-      const data = ajax({ url:'http://localhost:63600/Clinic/Delete', method:'POST',  body: { id: id}, crossDomain:true })
+      const data = ajax({ url:'http://localhost:52814/Clinic/Delete', method:'POST',  body: { id: id}, crossDomain:true })
       data.subscribe( res => {
         if(!res.response || res.response == -1){
           return "operation is not successful";
