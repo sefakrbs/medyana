@@ -32,8 +32,4 @@ export class ClinicsComponent implements OnInit {
     this.router.navigate([url, 'create']);
   }
 
-  deneme (){
-    this.service.getClinicList();
-  }
-
 }
