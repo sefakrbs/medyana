@@ -6,33 +6,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClinicListComponent } from './clinic-list/clinic-list.component';
-import { AppMenuComponent } from './app-menu/app-menu.component';
-import { EquipmentListComponent } from './equipment-list/equipment-list.component';
-import { ClinicComponent } from './clinic/clinic.component';
-
-const routes = [
-  { path: '', component: AppMenuComponent },
-  { path:'clinic', component:ClinicListComponent},
-  { path:'equipment', component:EquipmentListComponent},
-  { path: 'clinic/:id/:method', component: ClinicComponent },
-  { path: 'clinic/:method', component: ClinicComponent }
-];
+// import { EquipmentComponent } from './equipment/equipment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClinicListComponent,
-    AppMenuComponent,
-    EquipmentListComponent,
-    ClinicComponent
+    // EquipmentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

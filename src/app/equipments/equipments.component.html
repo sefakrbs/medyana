@@ -1,0 +1,46 @@
+<p>Equipments</p>
+
+<button (click)="createNew('/equipment')">
+    New Equipment
+</button>
+
+<div *ngFor="let item of list; index as id">
+   
+    <span>
+        {{item.id}}
+    </span>
+
+    <span>
+        {{item.name}}
+    </span>
+
+    <span>
+        {{item.procureDate}}
+    </span>
+
+    <span>
+        {{item.quantity}}
+    </span>
+
+    <span>
+        {{item.price}}
+    </span>
+
+    <span>
+        {{item.usageRatio}}
+    </span>
+
+    <span>
+        {{item.clinicId}}
+    </span>
+
+     <button (click)="edit('/equipment', id)">
+        Edit
+     </button>
+ 
+     <button (click)="delete('/equipment', id)">
+        Delete
+     </button>
+   
+   </div>
+ 

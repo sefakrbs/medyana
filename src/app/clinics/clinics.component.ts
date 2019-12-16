@@ -4,11 +4,11 @@ import { clinicsList } from '../clinics';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-clinic-list',
-  templateUrl: './clinic-list.component.html',
-  styleUrls: ['./clinic-list.component.css']
+  selector: 'app-clinics',
+  templateUrl: './clinics.component.html',
+  styleUrls: ['./clinics.component.css']
 })
-export class ClinicListComponent implements OnInit {
+export class ClinicsComponent implements OnInit {
 
   list = clinicsList;
   constructor(
@@ -30,6 +30,10 @@ export class ClinicListComponent implements OnInit {
 
   createNew(url, method) {
     this.router.navigate([url, 'create']);
+  }
+
+  deneme (){
+    this.service.deleteClinic(6);
   }
 
 }

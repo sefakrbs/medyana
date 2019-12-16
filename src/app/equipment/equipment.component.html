@@ -1,0 +1,25 @@
+
+<div *ngIf="method == 'create'">
+    <label style="font: bold;">Name: </label>
+    <input type="text" />
+    <button (click)="create()">{{method}}</button>
+</div>
+
+<div *ngIf="method == 'edit'">
+    <label style="font: bold;">Id: </label> <span>{{equipment.id}}</span> <br/>
+    <label style="font: bold;">Name: </label><input type="text" value="{{equipment.name}}" /><br/>
+    <label style="font: bold;">Procure Date: </label><input type="text" value="{{equipment.procureDate}}" /><br/>
+    <label style="font: bold;">Quantity: </label><input type="text" value="{{equipment.quantity}}" /><br/>
+    <label style="font: bold;">Price: </label><input type="text" value="{{equipment.price}}" /><br/>
+    <label style="font: bold;">Usage Ratio: </label><input type="text" value="{{equipment.usageRatio}}" /><br/>
+    <label style="font: bold;">Clinic: </label><input type="text" value="{{equipment.clinicId}}" /><br/>
+    <button (click)="edit()">{{method}}</button>
+</div>
+  
+<div *ngIf="method == 'delete'">
+    <label style="font: bold;">Id: </label><span>{{equipment.id}}</span> <br/>
+    <label style="font: bold;">Name: </label><span>{{equipment.name}}</span>
+    <button (click)="delete()">{{method}}</button>
+</div>
+
+

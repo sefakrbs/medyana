@@ -1,13 +1,13 @@
 
 <div *ngIf="method == 'create'">
     <label style="font: bold;">Clinic Name: </label>
-    <input type="text" />
-    <button (click)="create()">{{method}}</button>
+    <input type="text" [value]="clinicName"/>
+    <button (click)="create()" >{{method}}</button>
 </div>
 
 <div *ngIf="method == 'edit'">
     <label style="font: bold;">Clinic Id: </label> <span>{{clinic.id}}</span> <br/>
-    <label style="font: bold;">Clinic Name: </label><input type="text" value="{{clinic.name}}" />
+    <label style="font: bold;">Clinic Name: </label><input type="text" [value]="clinicName" />
     <button (click)="edit()">{{method}}</button>
 </div>
   
@@ -17,4 +17,4 @@
     <button (click)="delete()">{{method}}</button>
 </div>
 
-
+<router-outlet id="clinic"></router-outlet>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { clinicsList } from '../clinics';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {ClinicService } from '../clinic.service';
+ // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-clinic',
@@ -11,9 +12,13 @@ import { clinicsList } from '../clinics';
 export class ClinicComponent implements OnInit {
   clinic;
   method;
+  clinicName;
   // registerForm: FormGroup;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+    private clinicService: ClinicService) { 
+
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params=> {
@@ -22,23 +27,32 @@ export class ClinicComponent implements OnInit {
     });
   }
   
-  create(name){
-    if(!name){
+  create(){
+    if(!this.validate(this.clinicName)){
       alert('Name is required');
       return;
     }
 
+    this.clinicService.createClinic(this.clinicName);
   }
 
-  edit(id, name){
-    if(!name){
+  edit(){
+    if(!this.validate(this.clinicName)){
       alert('Name is required');
-      return;
     }
 
+    this.clinicService.updateClinic(this.clinic, this.clinicName);
   }
   
   delete(){
-    
-    }
+    this.clinicService.deleteClinic(this.clinic.id);
+  }
+
+  validate(element):boolean {
+        if(element == '' || element == undefined){
+          return false;
+        }
+
+      return true;
+  }
 }
